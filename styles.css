@@ -1,0 +1,92 @@
+* {
+	margin: 0;
+	font: 400 16px/1.62 "Microsoft JhengHei", sans-serif;
+
+}
+
+.menu {
+	display: block;
+	width: 200px;
+	position: fixed;
+	top: 30%;
+	left: 50%;
+	margin-left: -100px;
+	text-align: center;
+}
+h1 {
+	font-size: 50px;
+	margin-bottom: 30px;
+	animation: change 1s infinite;	
+}
+.menu a {
+	cursor: pointer;
+	display: block;
+	font-size: 40px;
+	margin-bottom: 30px;
+}
+.menu a:hover {
+	font-size: 45px;
+}
+//设置
+.settings {
+	margin: auto;
+	width: 200px;
+	height: 400px;
+	text-align: center;
+}
+.settings h4 {
+	display: block;
+	width: 200px;
+	height: 300px;
+	line-height: 300px;
+	margin: auto;
+	font-size: 40px;
+	animation: change 1s infinite;	
+}
+
+.speed {
+	width: 400px;
+	margin: auto;
+	font-size: 25px;
+}
+.settings a {
+	width: 200px;
+	margin: 30px auto;
+	cursor: pointer;
+	display: block;
+	font-size: 35px;
+
+}
+.settings a:hover {
+	font-size: 45px;
+}
+
+@keyframes change {
+    0% {
+        color: royalblue;
+    }
+    25% {
+        color: greenyellow;
+    }
+    50% {
+        color: orangered;
+    }
+    75% {
+        color: mediumpurple;
+    }
+    100% {
+        color: black;
+    }
+}
+
+.map {
+	width:600px;
+	height: 600px;
+	margin: auto;
+	margin-top: 30px;
+	/* background-color: gray; */
+	position: relative;
+	border: #000000 solid 15px;
+}
+
+

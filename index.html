@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>贪吃蛇</title>
+		<link rel="shortcut icon" href="https://cdn-1252875933.cos.ap-beijing.myqcloud.com/images/2019/09/5d7f434612d47.ico">
+		<link type="text/css" rel="styleSheet"  href="./styles.css" />
+	</head>
+	<body>
+		<div class="menu" id="menu">
+			<h1>贪吃蛇</h1>
+			<a class="menuStart">开始</a>
+			<a class="menuSettings">设置</a>
+		</div>
+		<div class="settings" style="display: none;">
+			<h4>设置</h4>
+			<form class="speed" >
+				速度
+				<input type="radio" name="speed" id="normol" class="input current" value="150" checked="true"/>
+				<label for="normol">一般</label>
+				<input type="radio" name="speed" id="fast"class="input" value="100" />
+				<label for="fast">飞快</label>
+				<input type="radio" name="speed" id="fastest" class="input" value="50" />
+				<label for="fastest">更快</label>
+			</form>
+			<a class="menuStart">开始</a>
+		</div>
+		
+		<div class="map" style="display: none;"></div>
+			
+		
+		<script src="./food.js" ></script>
+		<script src="./snake.js" ></script>
+		<script src="./game.js" ></script>
+		
+		<script type="text/javascript">
+			
+			//获取开始选项
+			var menuStart = document.getElementsByClassName('menuStart')
+			console.log(menuStart)
+			//获取开始菜单
+			var menu = document.getElementsByClassName('menu')[0]
+			//获取设置菜单
+			var menuSettings = document.getElementsByClassName('menuSettings')[0]
+			//获取游戏map
+			var map = document.querySelector(".map")
+			//获取设置
+			var settings = document.getElementsByClassName('settings')[0]
+			//获取速度选择
+			var speedLevel = document.getElementsByName('speed')
+			//速度
+			var speed
+			//分别为速度等级绑定单击事件
+			for(var i=0 ; i<speedLevel.length ; i++){
+				speedLevel[i].onclick = function(){
+					speed = this.value
+				}
+			}
+			
+			//绑定开始单击事件
+			for(var j=0 ; j<menuStart.length ; j++){
+				menuStart[j].onclick = function(){
+					
+					//关闭菜单
+					menu.style.display = 'none'
+					//关闭设置
+					settings.style.display = 'none'
+					//开始游戏
+					map.style.display = "block"
+					console.log(speed)
+					var gm = new Game(map,speed)
+					gm.init()
+				}
+			}
+			
+			//绑定设置单击事件
+			menuSettings.onclick = function(){
+				//关闭菜单
+				menu.style.display = 'none'
+				//出现设置
+				settings.style.display = 'block'
+			}
+			//跳转到首页选项
+			function toHome(){
+				map.style.display = 'none'
+				settings.style.display = 'none'
+				menu.style.display = 'block'
+				
+				return window.toHome = toHome
+			}
+			
+		</script>
+	</body>
+</html>
